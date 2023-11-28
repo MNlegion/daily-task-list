@@ -61,6 +61,7 @@ button {
     color: whitesmoke;
     border-radius: 30px;
     font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
 }
 
@@ -114,6 +115,7 @@ ul li span {
 ul li span:hover {
     background: #d8d3d3;
     border-radius: 50%;
+    color: whitesmoke;
 }
 
 
