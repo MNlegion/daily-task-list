@@ -1,6 +1,17 @@
-var buttonEl = document.querySelector("#save-task");
-console.log(buttonEl);
+const inputBox = document.getElementById("input-box");
+const listContainer = document.getElementById("list-container");
 
-buttonEl.addEventListener("click", function() {
-  console.log("button clicked");
-});
+function addTask() {
+  if (inputBox.value === "") {
+    alert("Please enter a task");
+  } else {
+    const listItem = document.createElement("li");
+    listItem.innerHTML = inputBox.value;
+    listContainer.appendChild(listItem);
+
+    const span = document.createElement("span");
+    span.innerHTML = "\u00D7";
+    listItem.appendChild(span);
+  }
+  inputBox.value = "";
+}
