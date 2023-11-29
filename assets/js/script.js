@@ -15,6 +15,7 @@ function addTask() {
     listItem.appendChild(span);
   }
   inputBox.value = "";
+  saveData();
 }
 
 listContainer.addEventListener(
@@ -22,12 +23,26 @@ listContainer.addEventListener(
   function (event) {
     if (event.target.tagName === "LI") {
       event.target.classList.toggle("checked");
+      saveData();
     } else if (event.target.tagName === "SPAN") {
         if (confirm("Are you sure you want to delete this task?"))
       event.target.parentElement.remove();
+      saveData();
     } else {
       return;
     }
   },
   false
 );
+
+function saveData() {
+  localStorage.setItem("listContainer", listContainer.innerHTML);
+}
+
+function loadData() {
+  if (localStorage.getItem("listContainer")) {
+    listContainer.innerHTML = localStorage.getItem("listContainer");
+  }
+}
+
+loadData();
