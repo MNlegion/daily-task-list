@@ -6,6 +6,8 @@ function addTask() {
     alert("Please enter a task");
   } else {
     const listItem = document.createElement("li");
+    // const listContent = document.createTextNode(inputBox.value);
+    
     listItem.innerHTML = inputBox.value;
     listItem.className = "list-item";
     listContainer.appendChild(listItem);
